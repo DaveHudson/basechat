@@ -1,11 +1,11 @@
-import Messages from "../components/messages";
-import PromptInput from "../components/prompt-input";
+"use client";
+
+import PromptContainer from "../components/prompt-container";
 
 export default function Chat() {
   return (
-    <div className="flex">
-      <Messages />
-      <PromptInput />
+    <div className="flex flex-col">
+      <PromptContainer />
     </div>
   );
 }
