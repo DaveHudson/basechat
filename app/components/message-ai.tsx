@@ -10,7 +10,7 @@ export default function MessageAI({ children }: { children: React.ReactNode }) {
       <div className="flex flex-row px-4 py-1">
         <span
           className={classNames(
-            "bg-yellow-500 h-6 w-6 rounded-full flex items-center justify-center ring-8 ring-white"
+            "bg-yellow-500 h-6 w-6 rounded-full flex items-center justify-center ring-8 ring-white dark:ring-gray-900"
           )}
         >
           <SunIcon className="h-4 w-4 text-white" aria-hidden="true" />
