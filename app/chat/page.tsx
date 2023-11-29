@@ -1,3 +1,11 @@
+import Messages from "../components/messages";
+import PromptInput from "../components/prompt-input";
+
 export default function Chat() {
-  return <>Chat page</>;
+  return (
+    <>
+      <Messages />
+      <PromptInput />
+    </>
+  );
 }
