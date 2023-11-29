@@ -50,7 +50,20 @@ export default function MessageAI({ children }: { children: React.ReactNode }) {
               <path d="M7 13v-8a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v7a1 1 0 0 0 1 1h3a4 4 0 0 1 4 4v1a2 2 0 0 0 4 0v-5h3a2 2 0 0 0 2 -2l-1 -5a2 3 0 0 0 -2 -2h-7a3 3 0 0 0 -3 3"></path>
             </svg>
           </button>
-          <button className="hover:text-blue-600" type="button">
+          <button
+            className="hover:text-blue-600"
+            type="button"
+            onClick={() => {
+              navigator.clipboard.writeText(`${children}`).then(
+                function () {
+                  console.log("Copying to clipboard was successful!");
+                },
+                function (err) {
+                  console.error("Could not copy text: ", err);
+                }
+              );
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
