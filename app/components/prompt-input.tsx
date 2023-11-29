@@ -20,8 +20,8 @@ export default function PromptInput() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-10">
-      <form className="flex w-full items-center rounded-md bg-white p-2 dark:bg-slate-900">
+    <div className="fixed bottom-0 left-0 right-0 z-10 lg:pl-72">
+      <form className="flex w-full items-center rounded-md p-2">
         <label htmlFor="prompt" className="sr-only">
           Enter your prompt
         </label>
