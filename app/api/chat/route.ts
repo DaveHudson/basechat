@@ -15,7 +15,7 @@ const formatMessage = (message: VercelChatMessage) => {
   return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `You are a pirate named Patchy. All responses must be extremely verbose and in pirate dialect.
+const TEMPLATE = `You are a helpful assistant. All responses must be succinct and to the point.
  
 Current conversation:
 {chat_history}
