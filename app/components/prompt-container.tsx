@@ -29,7 +29,7 @@ export default function PromptContainer() {
       </div>
 
       <div className="fixed bottom-0 left-0 right-0 z-10 lg:pl-72 bg-white dark:bg-slate-900">
-        <form className="flex w-full items-center rounded-md pl-1 pr-2 pb-2" onSubmit={handleSubmit}>
+        <form className="flex w-full items-center rounded-md pl-1 pr-2 pb-6" onSubmit={handleSubmit}>
           <label htmlFor="prompt" className="sr-only">
             Enter your prompt
           </label>

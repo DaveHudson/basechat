@@ -16,7 +16,7 @@ import {
 import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { classNames } from "../utils/css";
+import { classNames } from "./utils/css";
 
 export default function App({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
