@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import MessageAI from "./message-ai";
-import MessageUser from "./message-user";
+import MessageAI from "../chat/message-ai";
+import MessageUser from "../chat/message-user";
 import type { Message } from "ai/react";
 
 export default function Messages({ messages }: { messages: Message[] }) {
