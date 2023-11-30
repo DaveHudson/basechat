@@ -56,7 +56,6 @@ export default function NavigationMobile({
                   </button>
                 </div>
               </Transition.Child>
-              {/* Sidebar component, swap this element with another sidebar if you like */}
               <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-4 bg-white dark:bg-gray-800">
                 <div className="flex h-16 shrink-0 items-center">
                   <svg
