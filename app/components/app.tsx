@@ -4,12 +4,12 @@ import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   BellIcon,
-  CalendarIcon,
+  CommandLineIcon,
   ChartPieIcon,
   Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
+  FilmIcon,
   HomeIcon,
+  PhotoIcon,
   UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -24,18 +24,13 @@ export default function App({ children }: { children: React.ReactNode }) {
 
   const navigation = [
     { name: "Dashboard", href: "/", icon: HomeIcon, current: pathname === "/" },
-    { name: "Chat", href: "/chat", icon: UsersIcon, current: pathname === "/chat" },
-    { name: "Projects", href: "/projects", icon: FolderIcon, current: pathname === "/projects" },
-    { name: "Calendar", href: "/calendar", icon: CalendarIcon, current: pathname === "/calendar" },
-    { name: "Documents", href: "/documents", icon: DocumentDuplicateIcon, current: pathname === "/documents" },
-    { name: "Reports", href: "/reports", icon: ChartPieIcon, current: pathname === "/reports" },
+    { name: "AI Prompts", href: "/prompts", icon: CommandLineIcon, current: pathname === "/prompts" },
+    { name: "AI Chat", href: "/chat", icon: UsersIcon, current: pathname === "/chat" },
+    { name: "AI Images", href: "/images", icon: PhotoIcon, current: pathname === "/images" },
+    { name: "AI Video", href: "/videos", icon: FilmIcon, current: pathname === "/videos" },
+    { name: "AI Reports", href: "/reports", icon: ChartPieIcon, current: pathname === "/reports" },
   ];
 
-  const teams = [
-    { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
-    { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
-    { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
-  ];
   const userNavigation = [
     { name: "Your profile", href: "#" },
     { name: "Sign out", href: "#" },
@@ -126,36 +121,6 @@ export default function App({ children }: { children: React.ReactNode }) {
                             ))}
                           </ul>
                         </li>
-                        <li>
-                          <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                          <ul role="list" className="-mx-2 mt-2 space-y-1">
-                            {teams.map((team) => (
-                              <li key={team.name}>
-                                <Link
-                                  href={team.href}
-                                  className={classNames(
-                                    team.current
-                                      ? "bg-gray-50 text-indigo-600"
-                                      : "text-gray-700 dark:text-gray-300 hover:text-indigo-600 hover:bg-gray-50 dark:hover:text-gray-300 dark:hover:bg-gray-700",
-                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                  )}
-                                >
-                                  <span
-                                    className={classNames(
-                                      team.current
-                                        ? "text-indigo-600 border-indigo-600"
-                                        : "text-gray-400 border-gray-200 dark:border-gray-700 group-hover:border-indigo-600 group-hover:text-indigo-600",
-                                      "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium "
-                                    )}
-                                  >
-                                    {team.initial}
-                                  </span>
-                                  <span className="truncate">{team.name}</span>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </li>
                         <li className="mt-auto">
                           <Link
                             href="/settings"
@@ -219,36 +184,6 @@ export default function App({ children }: { children: React.ReactNode }) {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li>
-                  <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                  <ul role="list" className="-mx-2 mt-2 space-y-1">
-                    {teams.map((team) => (
-                      <li key={team.name}>
-                        <Link
-                          href={team.href}
-                          className={classNames(
-                            team.current
-                              ? "bg-gray-50 text-indigo-600"
-                              : "text-gray-700 dark:text-gray-300 hover:text-indigo-600 hover:bg-gray-50 dark:hover:text-gray-300 dark:hover:bg-gray-700",
-                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                          )}
-                        >
-                          <span
-                            className={classNames(
-                              team.current
-                                ? "text-indigo-600 border-indigo-600"
-                                : "text-gray-400 border-gray-200 dark:border-gray-700 group-hover:border-indigo-600 group-hover:text-indigo-600",
-                              "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium"
-                            )}
-                          >
-                            {team.initial}
-                          </span>
-                          <span className="truncate">{team.name}</span>
                         </Link>
                       </li>
                     ))}
