@@ -1,12 +1,12 @@
+import { cn } from "@/lib/utils";
 import { SunIcon } from "@heroicons/react/20/solid";
-import { classNames } from "../utils/css";
 
 export default function MessageAI({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex">
       <div className="flex flex-row px-4 py-1">
         <span
-          className={classNames(
+          className={cn(
             "bg-yellow-500 h-6 w-6 rounded-full flex items-center justify-center ring-8 ring-white dark:ring-gray-900"
           )}
         >

@@ -1,4 +1,4 @@
-import PromptContainer from "../components/prompt-container";
+import PromptContainer from "../../components/prompt-container";
 
 export default function Chat() {
   return (

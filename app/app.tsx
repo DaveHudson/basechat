@@ -16,7 +16,7 @@ import {
 import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { classNames } from "./utils/css";
+import { cn } from "@/lib/utils";
 
 export default function App({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -101,7 +101,7 @@ export default function App({ children }: { children: React.ReactNode }) {
                               <li key={item.name}>
                                 <Link
                                   href={item.href}
-                                  className={classNames(
+                                  className={cn(
                                     item.current
                                       ? "bg-gray-50 text-indigo-600 dark:text-gray-800 dark:bg-gray-200"
                                       : "text-gray-700 dark:text-gray-300 hover:text-indigo-600 hover:bg-gray-50 dark:hover:text-gray-300 dark:hover:bg-gray-700",
@@ -109,7 +109,7 @@ export default function App({ children }: { children: React.ReactNode }) {
                                   )}
                                 >
                                   <item.icon
-                                    className={classNames(
+                                    className={cn(
                                       item.current ? "text-indigo-600" : "text-gray-400 group-hover:text-indigo-600",
                                       "h-6 w-6 shrink-0"
                                     )}
@@ -169,7 +169,7 @@ export default function App({ children }: { children: React.ReactNode }) {
                       <li key={item.name}>
                         <Link
                           href={item.href}
-                          className={classNames(
+                          className={cn(
                             item.current
                               ? "bg-gray-50 text-indigo-600"
                               : "text-gray-700 dark:text-gray-300 hover:text-indigo-600 hover:bg-gray-50 dark:hover:text-gray-300 dark:hover:bg-gray-700",
@@ -177,7 +177,7 @@ export default function App({ children }: { children: React.ReactNode }) {
                           )}
                         >
                           <item.icon
-                            className={classNames(
+                            className={cn(
                               item.current ? "text-indigo-600" : "text-gray-400 group-hover:text-indigo-600",
                               "h-6 w-6 shrink-0"
                             )}
@@ -280,7 +280,7 @@ export default function App({ children }: { children: React.ReactNode }) {
                           {({ active }) => (
                             <Link
                               href={item.href}
-                              className={classNames(
+                              className={cn(
                                 active ? "bg-gray-50 dark:bg-gray-700" : "",
                                 "block px-3 py-1 text-sm leading-6 text-gray-900 dark:text-gray-300"
                               )}
