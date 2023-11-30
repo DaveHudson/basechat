@@ -1,10 +1,7 @@
 import { SunIcon } from "@heroicons/react/20/solid";
+import { classNames } from "../utils/css";
 
 export default function MessageAI({ children }: { children: React.ReactNode }) {
-  function classNames(...classes: any[]) {
-    return classes.filter(Boolean).join(" ");
-  }
-
   return (
     <div className="flex">
       <div className="flex flex-row px-4 py-1">
