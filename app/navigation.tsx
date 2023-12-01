@@ -21,7 +21,8 @@ export default function App({ children }: { children: React.ReactNode }) {
   const navigation = [
     { name: "Dashboard", href: "/", icon: HomeIcon, current: pathname === "/" },
     { name: "AI Prompts", href: "/prompts", icon: CommandLineIcon, current: pathname === "/prompts" },
-    { name: "AI Chat", href: "/chat", icon: UsersIcon, current: pathname === "/chat" },
+    { name: "AI Chat GPT", href: "/chat", icon: UsersIcon, current: pathname === "/chat" },
+    { name: "AI Chat Claude", href: "/chat-claude", icon: UsersIcon, current: pathname === "/chat-claude" },
     { name: "AI Voice Chat", href: "/chat-voice", icon: UsersIcon, current: pathname === "/chat-voice" },
     { name: "RAG", href: "/chat-rag", icon: UsersIcon, current: pathname === "/chat-rag" },
     {
