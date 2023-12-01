@@ -71,6 +71,13 @@ export default function App({ children }: { children: React.ReactNode }) {
       current: pathname === "/chat/anthropic/claude",
     },
     {
+      name: "Ollama (Llama2)",
+      href: "/chat/ollama/llama2",
+      subNav: true,
+      icon: UsersIcon,
+      current: pathname === "/chat/ollama/llama2",
+    },
+    {
       name: "Completion",
       href: "/completion",
       icon: DocumentTextIcon,
