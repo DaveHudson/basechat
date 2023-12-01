@@ -30,6 +30,12 @@ export default function App({ children }: { children: React.ReactNode }) {
       icon: UsersIcon,
       current: pathname === "/stability/text-to-image",
     },
+    {
+      name: "Image To Image",
+      href: "/stability/image-to-image",
+      icon: UsersIcon,
+      current: pathname === "/stability/image-to-image",
+    },
     { name: "AI Images", href: "/images", icon: PhotoIcon, current: pathname === "/images" },
     { name: "AI Video", href: "/videos", icon: FilmIcon, current: pathname === "/videos" },
     { name: "AI Reports", href: "/reports", icon: ChartPieIcon, current: pathname === "/reports" },
