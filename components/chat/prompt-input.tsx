@@ -4,9 +4,11 @@ import invariant from "tiny-invariant";
 export default function PromptInput({
   input,
   handleInputChange,
+  disabled,
 }: {
   input: string;
   handleInputChange: (event: any) => void;
+  disabled?: boolean;
 }) {
   const textareaRef = useRef(null);
 
@@ -71,6 +73,7 @@ export default function PromptInput({
         <button
           className="inline-flex hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-600 sm:p-2"
           type="submit"
+          disabled={disabled}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

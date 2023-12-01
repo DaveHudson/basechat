@@ -23,6 +23,12 @@ export default function App({ children }: { children: React.ReactNode }) {
     { name: "AI Prompts", href: "/prompts", icon: CommandLineIcon, current: pathname === "/prompts" },
     { name: "AI Chat GPT", href: "/chat", icon: UsersIcon, current: pathname === "/chat" },
     { name: "AI Chat Claude", href: "/chat-claude", icon: UsersIcon, current: pathname === "/chat-claude" },
+    {
+      name: "Completion Cohere",
+      href: "/completion/cohere",
+      icon: UsersIcon,
+      current: pathname === "/completion/cohere",
+    },
     { name: "AI Voice Chat", href: "/chat-voice", icon: UsersIcon, current: pathname === "/chat-voice" },
     { name: "RAG", href: "/chat-rag", icon: UsersIcon, current: pathname === "/chat-rag" },
     {
