@@ -72,6 +72,7 @@ export default function NavigationMobile({
                                 item.current
                                   ? "bg-gray-50 text-sky-600 dark:text-gray-800 dark:bg-gray-200"
                                   : "text-gray-700 dark:text-gray-300 hover:text-sky-600 hover:bg-gray-50 dark:hover:text-gray-300 dark:hover:bg-gray-700",
+                                item.subNav && "ml-4",
                                 "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                               )}
                             >

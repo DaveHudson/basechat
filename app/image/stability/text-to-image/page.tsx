@@ -12,7 +12,7 @@ export default function TextToImage() {
     event.preventDefault();
     setIsGenerating(true);
     const formData = new FormData(event.currentTarget);
-    const response = await fetch("/api/stability/text-to-image", {
+    const response = await fetch("/api/image/stability/text-to-image", {
       method: "POST",
       body: formData,
     });

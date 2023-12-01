@@ -17,7 +17,7 @@ export default function ImageToImage() {
     setIsGenerating(true);
     const formData = new FormData(event.currentTarget);
     formData.set("file", file);
-    const response = await fetch("/api/stability/image-to-image", {
+    const response = await fetch("/api/image/stability/image-to-image", {
       method: "POST",
       body: formData,
     });

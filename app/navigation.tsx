@@ -1,6 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
-import { CommandLineIcon, ChartPieIcon, FilmIcon, HomeIcon, PhotoIcon, UsersIcon } from "@heroicons/react/24/outline";
+import {
+  CommandLineIcon,
+  FilmIcon,
+  HomeIcon,
+  PhotoIcon,
+  UsersIcon,
+  ChatBubbleLeftRightIcon,
+  DocumentTextIcon,
+  CameraIcon,
+  PencilSquareIcon,
+  ArrowsRightLeftIcon,
+  ChatBubbleBottomCenterTextIcon,
+  SpeakerWaveIcon,
+  DocumentPlusIcon,
+} from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 
 import NavigationDesktop from "@/components/nav/nav-desktop";
@@ -10,6 +24,7 @@ import Header from "@/components/nav/header";
 export type NavigationItem = {
   name: string;
   href: string;
+  subNav?: boolean;
   icon: any;
   current: boolean;
 };
@@ -22,40 +37,78 @@ export default function App({ children }: { children: React.ReactNode }) {
     { name: "Dashboard", href: "/", icon: HomeIcon, current: pathname === "/" },
     { name: "AI Prompts", href: "/prompts", icon: CommandLineIcon, current: pathname === "/prompts" },
     {
-      name: "AI Chat GPT",
+      name: "Chat",
+      href: "/chat",
+      icon: ChatBubbleLeftRightIcon,
+      current: pathname === "/chat",
+    },
+    {
+      name: "Chat GPT (Text)",
       href: "/chat/openai/chatgpt",
-      icon: UsersIcon,
+      subNav: true,
+      icon: ChatBubbleBottomCenterTextIcon,
       current: pathname === "/chat/openai/chatgpt",
     },
-    { name: "AI Voice Chat", href: "/chat/openai/voice", icon: UsersIcon, current: pathname === "/chat/openai/voice" },
-    { name: "RAG", href: "/chat/openai/rag", icon: UsersIcon, current: pathname === "/chat/openai/rag" },
     {
-      name: "AI Chat Claude",
+      name: "Chat GPT (Voice)",
+      href: "/chat/openai/voice",
+      subNav: true,
+      icon: SpeakerWaveIcon,
+      current: pathname === "/chat/openai/voice",
+    },
+    {
+      name: "Chat GPT (RAG)",
+      href: "/chat/openai/rag",
+      subNav: true,
+      icon: DocumentPlusIcon,
+      current: pathname === "/chat/openai/rag",
+    },
+    {
+      name: "Claude",
       href: "/chat/anthropic/claude",
+      subNav: true,
       icon: UsersIcon,
       current: pathname === "/chat/anthropic/claude",
     },
     {
-      name: "Completion Cohere",
+      name: "Completion",
+      href: "/completion",
+      icon: DocumentTextIcon,
+      current: pathname === "/completion",
+    },
+    {
+      name: "Cohere",
       href: "/completion/cohere",
-      icon: UsersIcon,
+      subNav: true,
+      icon: ArrowsRightLeftIcon,
       current: pathname === "/completion/cohere",
     },
     {
+      name: "Image",
+      href: "/image",
+      icon: PhotoIcon,
+      current: pathname === "/image",
+    },
+    {
       name: "Text To Image",
-      href: "/stability/text-to-image",
-      icon: UsersIcon,
-      current: pathname === "/stability/text-to-image",
+      href: "/image/stability/text-to-image",
+      subNav: true,
+      icon: PencilSquareIcon,
+      current: pathname === "/image/stability/text-to-image",
     },
     {
       name: "Image To Image",
-      href: "/stability/image-to-image",
-      icon: UsersIcon,
-      current: pathname === "/stability/image-to-image",
+      href: "/image/stability/image-to-image",
+      icon: CameraIcon,
+      subNav: true,
+      current: pathname === "/image/stability/image-to-image",
     },
-    { name: "AI Images", href: "/images", icon: PhotoIcon, current: pathname === "/images" },
-    { name: "AI Video", href: "/videos", icon: FilmIcon, current: pathname === "/videos" },
-    { name: "AI Reports", href: "/reports", icon: ChartPieIcon, current: pathname === "/reports" },
+    {
+      name: "Video",
+      href: "/video",
+      icon: FilmIcon,
+      current: pathname === "/video",
+    },
   ];
 
   useEffect(() => {
