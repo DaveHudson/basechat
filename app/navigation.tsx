@@ -21,16 +21,26 @@ export default function App({ children }: { children: React.ReactNode }) {
   const navigation = [
     { name: "Dashboard", href: "/", icon: HomeIcon, current: pathname === "/" },
     { name: "AI Prompts", href: "/prompts", icon: CommandLineIcon, current: pathname === "/prompts" },
-    { name: "AI Chat GPT", href: "/chat", icon: UsersIcon, current: pathname === "/chat" },
-    { name: "AI Chat Claude", href: "/chat-claude", icon: UsersIcon, current: pathname === "/chat-claude" },
+    {
+      name: "AI Chat GPT",
+      href: "/chat/openai/chatgpt",
+      icon: UsersIcon,
+      current: pathname === "/chat/openai/chatgpt",
+    },
+    { name: "AI Voice Chat", href: "/chat/openai/voice", icon: UsersIcon, current: pathname === "/chat/openai/voice" },
+    { name: "RAG", href: "/chat/openai/rag", icon: UsersIcon, current: pathname === "/chat/openai/rag" },
+    {
+      name: "AI Chat Claude",
+      href: "/chat/anthropic/claude",
+      icon: UsersIcon,
+      current: pathname === "/chat/anthropic/claude",
+    },
     {
       name: "Completion Cohere",
       href: "/completion/cohere",
       icon: UsersIcon,
       current: pathname === "/completion/cohere",
     },
-    { name: "AI Voice Chat", href: "/chat-voice", icon: UsersIcon, current: pathname === "/chat-voice" },
-    { name: "RAG", href: "/chat-rag", icon: UsersIcon, current: pathname === "/chat-rag" },
     {
       name: "Text To Image",
       href: "/stability/text-to-image",
