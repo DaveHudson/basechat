@@ -6,7 +6,7 @@ import { useCompletion } from "ai/react";
 
 export default function Completion() {
   const { completion, input, isLoading, handleInputChange, handleSubmit, setInput } = useCompletion({
-    api: "/api/completion/huggingface",
+    api: "/api/completion/huggingface/translation",
   });
 
   return (

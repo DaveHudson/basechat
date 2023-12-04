@@ -10,7 +10,6 @@ export const runtime = "edge";
 export async function POST(req: Request) {
   // Extract the `prompt` from the body of the request
   const { prompt } = await req.json();
-  console.log(prompt);
 
   const response = await Hf.translation({
     model: "t5-small",

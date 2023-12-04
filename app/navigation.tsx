@@ -92,10 +92,10 @@ export default function App({ children }: { children: React.ReactNode }) {
     },
     {
       name: "Hugging Face (Translate)",
-      href: "/completion/huggingface",
+      href: "/completion/huggingface/translation",
       subNav: true,
       icon: ArrowsRightLeftIcon,
-      current: pathname === "/completion/huggingface",
+      current: pathname === "/completion/huggingface/translation",
     },
     {
       name: "Prompt Hub",
