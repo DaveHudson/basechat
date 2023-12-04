@@ -91,6 +91,20 @@ export default function App({ children }: { children: React.ReactNode }) {
       current: pathname === "/completion/cohere",
     },
     {
+      name: "Hugging Face (Translate)",
+      href: "/completion/huggingface",
+      subNav: true,
+      icon: ArrowsRightLeftIcon,
+      current: pathname === "/completion/huggingface",
+    },
+    {
+      name: "Prompt Hub",
+      href: "/completion/prompthub",
+      subNav: true,
+      icon: ArrowsRightLeftIcon,
+      current: pathname === "/completion/prompthub",
+    },
+    {
       name: "Image",
       href: "/image",
       icon: PhotoIcon,

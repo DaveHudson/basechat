@@ -12,6 +12,7 @@
     "@anthropic-ai/sdk": "^0.10.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@huggingface/inference": "^2.6.4",
     "@tailwindcss/forms": "^0.5.7",
     "ai": "^2.2.27",
     "class-variance-authority": "^0.7.0",
