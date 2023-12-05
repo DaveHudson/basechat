@@ -1,8 +1,13 @@
 import { NextRequest } from "next/server";
+import { OpenAI } from "langchain/llms/openai";
 
 export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
+  /**
+   * Incoming audio
+   * - transcribe to text
+   */
   const requestFormData = await request.formData();
   const { file } = Object.fromEntries(requestFormData.entries());
 
@@ -32,12 +37,27 @@ export async function POST(request: NextRequest) {
 
   const responseJSON = await response.json();
 
-  // TODO: OpenAI call to get a response for the audio input
+  /**
+   * Send transcribed text to completion
+   * - get response
+   */
+
+  const model = new OpenAI({
+    modelName: "gpt-3.5-turbo-instruct", // Defaults to "gpt-3.5-turbo-instruct" if no model provided.
+    temperature: 0.9,
+  });
+
+  const aiRes = await model.call(responseJSON.text);
+
+  /**
+   * Convert Open AI text response to Eleven Labs audio
+   * - return audio
+   */
 
   // Eleven labs audio
   const body = {
     model_id: "eleven_multilingual_v2",
-    text: responseJSON.text,
+    text: aiRes,
     voice_settings: {
       similarity_boost: 1,
       stability: 1,

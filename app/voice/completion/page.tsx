@@ -12,7 +12,6 @@ export default function Chat() {
     audio: true,
   });
   const [audioURL, setAudioURL] = useState("");
-  const [audioTranslation, setAudioTranslation] = useState<string | null>(null);
 
   const handleSubmit = async () => {
     invariant(mediaBlobUrl, "mediaBlobUrl is null");
@@ -26,8 +25,6 @@ export default function Chat() {
       method: "POST",
       body: formData,
     });
-    // const text = await res.text();
-    // setAudioTranslation(text);
 
     const blob = new Blob([await res.blob()], { type: "audio/mpeg" });
     const url = URL.createObjectURL(blob);
@@ -59,10 +56,9 @@ export default function Chat() {
         {mediaBlobUrl && <audio src={mediaBlobUrl} controls playsInline hidden />}
       </div>
       <Button onClick={handleSubmit}>Send</Button>
-      <div>audioTranslation: {audioTranslation}</div>
       <div className="flex-1 space-y-8 overflow-y-auto leading-6 sm:text-base sm:leading-7">
         {audioURL && (
-          <audio autoPlay controls>
+          <audio autoPlay controls hidden>
             <source src={audioURL} type="audio/mpeg" />
           </audio>
         )}

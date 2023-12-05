@@ -105,6 +105,13 @@ export default function App({ children }: { children: React.ReactNode }) {
       current: pathname === "/completion/prompthub",
     },
     {
+      name: "Voice",
+      href: "/voice/completion",
+      subNav: true,
+      icon: SpeakerWaveIcon,
+      current: pathname === "/voice/completion",
+    },
+    {
       name: "Image",
       href: "/image",
       icon: PhotoIcon,
