@@ -4,9 +4,13 @@ import { useReactMediaRecorder } from "react-media-recorder";
 import { MicrophoneIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import invariant from "tiny-invariant";
+import { Visualizer } from "react-sound-visualizer";
+import { Button } from "@/components/ui/button";
 
 export default function Chat() {
-  const { status, startRecording, stopRecording, mediaBlobUrl } = useReactMediaRecorder({ audio: true });
+  const { status, startRecording, stopRecording, mediaBlobUrl, previewAudioStream } = useReactMediaRecorder({
+    audio: true,
+  });
   const [audioTranslation, setAudioTranslation] = useState<string | null>(null);
 
   const handleSubmit = async () => {
@@ -26,20 +30,31 @@ export default function Chat() {
   };
   return (
     <div>
-      <p>Status:{status}</p>
-      <div>mediaBlobUrl: {mediaBlobUrl}</div>
-      <div>audioTranslation: {audioTranslation}</div>
       <div>
         <button onClick={status === "recording" ? stopRecording : startRecording}>
           {(status === "idle" || status === "stopped") && <MicrophoneIcon className="h-6 w-6" aria-hidden="true" />}
-          {status === "recording" && <MicrophoneIcon className="h-6 w-6 text-red-700" aria-hidden="true" />}
+          {status === "recording" && (
+            <div className="flex">
+              <MicrophoneIcon className="h-6 w-6 text-red-700" aria-hidden="true" />
+              {previewAudioStream && (
+                <Visualizer audio={previewAudioStream} autoStart>
+                  {({ canvasRef }) => (
+                    <>
+                      <canvas ref={canvasRef} width={500} height={30} />
+                    </>
+                  )}
+                </Visualizer>
+              )}
+            </div>
+          )}
           {(status === "acquiring_media" || status === "stopping") && (
             <MicrophoneIcon className="h-6 w-6 text-orange-400" aria-hidden="true" />
           )}
         </button>
-        {mediaBlobUrl && <audio src={mediaBlobUrl} controls autoPlay playsInline />}
+        {mediaBlobUrl && <audio src={mediaBlobUrl} controls playsInline hidden />}
       </div>
-      <button onClick={handleSubmit}>Submit</button>
+      <Button onClick={handleSubmit}>Send</Button>
+      <div>audioTranslation: {audioTranslation}</div>
     </div>
   );
 }
